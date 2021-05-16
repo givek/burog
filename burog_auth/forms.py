@@ -3,6 +3,11 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
 
+class EmailLowerField(forms.EmailField):
+    def to_python(self, value):
+        return value.lower()
+
+
 class UserRegisterForm(UserCreationForm):
     username = forms.CharField(
         widget = forms.TextInput(

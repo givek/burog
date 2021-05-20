@@ -1,0 +1,68 @@
+{% extends 'burog_auth/base.html' %}
+{% load static %}
+
+{% block static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/burog_auth.css' %}">
+{% endblock static %}
+
+
+{% block content %}
+    <div class="main">
+        <h1 class="logo"><a class="logo" href="#">burog</a></h1>
+        <div class="container">
+            <form method="POST" enctype="multipart/form-data" class="form signup__form">
+                {% csrf_token %}  
+                <legend class="label signup__label">Create your burog Account</legend>
+                {{ wizard.management_form }}
+                {% if wizard.steps.step1 == 1 %}
+                    <label class="form__label" for="email">
+                        Username
+                        {{ wizard.form.username }}
+                        {% if wizard.form.username.errors %}
+                            <p style="text-align: center; margin-top: 10px; color: #EF5350;">
+                                A user with that username already exists.
+                            </p>
+                        {% endif %}
+                    </label>
+                    <label class="form__label" for="email">
+                        Email
+                        {{ wizard.form.email }}
+                        {% if wizard.form.email.errors %}
+                            <p style="text-align: center; margin-top: 10px; color: #EF5350;">
+                                A user with that email already exists.
+                            </p>
+                        {% endif %}
+                    </label>
+                    <label class="form__label" for="password">
+                        Password
+                        {{ wizard.form.password1 }}
+                    </label>
+                {% endif %}
+
+                {% if wizard.steps.step1 == 2 %}
+                    <div class="img-container">
+                        <img src="{% static '/default.png' %}" id="img" class="img" onclick="chooseFile();">
+                    </div>
+                    {{wizard.form.image}}
+                    <label class="form__label" for="first_name">
+                        First name
+                        {{ wizard.form.first_name }}
+                    </label>
+                    <label class="form__label lastname" for="last_name">
+                        Last name
+                        {{ wizard.form.last_name }}
+                    </label>
+                {% endif %}
+                
+                <div class="form-group">
+                    <button class="btn signin__btn" type="submit">Sign in</button>
+                </div>
+                <p class="signup__question question">
+                    Already have an account? <a class="signup__link link" href="{% url 'login' %}"> Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script src="{% static '/js/profilePicture.js' %}"></script>
+{% endblock content %}

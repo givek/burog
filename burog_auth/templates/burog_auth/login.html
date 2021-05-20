@@ -1,0 +1,41 @@
+{% extends "burog_auth/base.html" %}
+{% load static %}
+
+
+{% block static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/burog_auth.css' %}">
+{% endblock static %}
+    
+
+{% block content %}
+    <div class="main">
+        <h1 class="logo"><a class="logo" href="#">burog</a></h1>
+        <div class="container">
+            <form method="POST" class="form signin__form">
+                {% csrf_token %}  
+                <legend class="label signin__label">Sign in</legend>
+                <label class="form__label" for="email">
+                    Username
+                    {{ form.username }}
+                </label>
+                <label class="form__label" for="password">
+                    Password
+                    {{ form.password }}
+                    
+                    {% if form.errors %}
+                        <p style="text-align: center; margin-top: 10px; color: #EF5350;">
+                            Please enter correct username and password.
+                        </p>
+                    {% endif %}
+                        
+                </label>
+                <div class="form-group">
+                    <button class="btn signin__btn" type="submit">Sign in</button>
+                </div>
+                <p class="signup__question question">
+                    Don’t have an account? <a class="signup__link link" href="{% url 'register' %}"> Create one</a>
+                </p>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'burog_auth',
+    'blog',
 ]
 
 MIDDLEWARE = [

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import CKEditor5Field
 from django.utils import timezone
 from django.urls import reverse
 
@@ -7,7 +8,7 @@ from django.urls import reverse
 class Post(models.Model):
     title = models.CharField(max_length=100)
     thumbnail = models.ImageField(default='default.png', upload_to='Thumbnails')
-    content = models.TextField(blank=True, null=True)
+    content = CKEditor5Field(config_name='extends', blank=True, null=True)
     overview = models.TextField(max_length=460, blank=True, null=True)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)

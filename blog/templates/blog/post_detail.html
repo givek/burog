@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block style %}
+        <link rel="stylesheet" href="{% static '/css/post_details.css' %}">  
+    {% endblock style %}
+
+    {% block content %}
+            
+    <div class="post">    
+        <h1 class="post__title">{{ post.title }}</h1>
+        <div class="post-author__info">
+            <p>By <a href="{% url 'profile' post.author.id %}">{{ post.author }}</a> {{ post.date_posted|date:'F d, Y' }}</p>
+        </div>
+        <img class="post__thumbnail" src="{{ post.thumbnail.url }}" alt="post-thumbnail">
+        <div class="post__overview">
+            <h2>OVERVIEW</h2>
+            <p>{{ post.overview }}</p>
+        </div>
+        <div class="post__content">
+            {{ post.content | safe }}
+        </div>
+        
+        {% if post.author == user %}
+            <div class="post__buttons">
+                <a href="{% url 'post-update' post.id %}" class="button">Update</a>
+                <a href="{% url 'post-delete' post.id %}" class="button button-delete">Delete</a>
+            </div>
+        {% endif %}
+            
+    </div>
+</div>
+
+
+    {% endblock content %}

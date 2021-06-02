@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+  
+  {% block style %}
+  <link rel="stylesheet" href="{% static '/css/blogProfile.css' %}">
+      
+  {% endblock style %}
+            
+            
+
+
+{% block content %}
+
+
+
+        <section class="profile-info">
+            <div class="profilePic-name">
+                <img class="profile-profilePic" src="{{ user.profile.image.url }}" alt="profile-picture">
+                <h3 class="name">{{user.first_name}} {{user.last_name}}</h3>
+            </div>
+            
+            
+            
+            <div class="profile-stats">
+                <h3 class="username">{{user.username}}</h3>
+				<ul class="stats">
+					<li class="stat-info mar"><span class="profile-stat-count">{{ posts.count }}</span> posts</li>
+					<!-- <li class="stat-info mar"><span class="profile-stat-count">48</span> followers</li> -->
+					<!-- <li class="stat-info"><span class="profile-stat-count">40</span> following</li> -->
+				</ul>
+            </div>
+            
+            
+        </section>
+        
+        <div class="profile-buttons">
+            <!-- <a href="#" class="button">EMAIL {{user.first_name}}</a> -->
+            <!-- <a href="#" class="button edit-profile">EDIT PROFILE</a> -->
+        </div>
+        <div class="add-post">
+            <a href="{% url 'post-create' %}">
+                <img class="add-post-icon" src="{% static '/img/blog/add-post.svg' %}" alt="add-icon">
+            </a>
+        </div>
+        <section class="recent">
+            <h3>Recent Posts</h3>
+            <div class="recent-posts">
+                {% for post in posts %}
+                <a href="{% url 'post-details' post.id %}">
+                <div class="recent-flex">
+                    <img src="{{ post.thumbnail.url }}" alt="imgs1">
+                    <div>
+                        <p class="post-title">{{ post.title }}</p>
+                        <p class="post-content">{{ post.overview | slice:":160"  }}</p>
+                    </div>    
+                </div>
+                </a>
+                {% endfor %} 
+            </div>
+        </section>
+    </div>
+
+
+
+    
+{% endblock content %}
+    

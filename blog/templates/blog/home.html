@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block content %}
+            
+    
+        <section class="featured">
+           
+            <h3>Featured Posts</h3>
+            <div class="featured-posts">
+                <button class="btn left-btn"><img src="{% static '/img/blog/keyboard_arrow_left-24px.svg' %}" alt=""></button>
+                <div class="post-div">
+                    {% for post in posts %}
+        
+                    {% if forloop.counter <= 1 %}
+                    
+                <div class="featured-flex current-post">
+                    <a href="{% url 'post-details' post.id %}">  
+                    <img src="{{ post.thumbnail.url }}" alt="img1">
+                </a>
+                <a href="{% url 'post-details' post.id %}">
+                    <div>
+                        <p class="f-post-title">{{ post.title }}</p>
+                        <p class="hide-mobile f-post-content">{{ post.overview }}</p>
+                    </div> 
+                </a>
+                </div>
+            
+            {% endif %}
+            {% endfor %} 
+                {% for post in posts %}
+        
+                    {% if forloop.counter > 1 and  forloop.counter <= 4%}
+                    
+                <div class="featured-flex">
+                    <a href="{% url 'post-details' post.id %}">
+                    <img src="{{ post.thumbnail.url }}" alt="img1">
+                </a>
+                <a href="{% url 'post-details' post.id %}">
+                    <div>
+                        <p class="f-post-title">{{ post.title }}</p>
+                        <p class="hide-mobile f-post-content">{{ post.overview }}</p>
+                    </div> 
+                </a>
+                </div>
+            
+                {% endif %}
+                    {% endfor %}  
+                
+            </div>
+            <button class="btn right-btn"><img src="{% static '/img/blog/keyboard_arrow_right-24px.svg' %}" alt=""></button>
+                <div class="nav-btns">
+                    <button class="indicator current-slide"></button>
+                    <button class="indicator"></button>
+                    <button class="indicator"></button>
+                    <button class="indicator"></button>
+                </div>
+                
+            </div>
+            
+            
+        </section>
+        
+        <section class="recent">
+            <h3>Recent Posts</h3>
+            <div class="recent-posts">
+                {% for post in posts %}
+                <a href="{% url 'post-details' post.id %}">
+                <div class="recent-flex">
+                    <img src="{{ post.thumbnail.url }}" alt="imgs1">
+                    <div>
+                        <p class="post-title">{{ post.title }}</p>
+                        <p class="post-content">{{ post.overview | slice:":160"  }}</p>
+                    </div>    
+                </div>
+                </a>
+                {% endfor %} 
+                
+            </div>
+        </section>
+    </div>
+
+    <script src="{% static '/js/slide.js' %}"></script>
+
+    {% endblock content %}

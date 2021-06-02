@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "source sans pro";
+  font-size: 1rem;
+  line-height: 126.3%;
+}
+
+.form {
+  margin: 0 auto;
+  margin-top: 3.25em;
+  width: 76%;
+  max-width: 750px;
+}
+
+.form__title {
+  font-weight: 500;
+}
+
+#id_title {
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #c2c2c2;
+}
+
+.form__thumbnail {
+  margin-top: 40px;
+  font-weight: 500;
+  visibility: hidden;
+}
+
+.form__thumbnail br {
+  display: none;
+}
+
+.form__thumbnail-label {
+  visibility: visible;
+}
+
+.thumbnail-wrapper {
+  width: 160px;
+  height: 123.233px;
+  border-radius: 10px;
+  margin-top: 10px;
+  visibility: visible;
+}
+
+.thumbnail-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+#id_thumbnail {
+  display: none;
+}
+
+.form__content {
+  margin-top: 20px;
+}
+
+.form__content-label {
+  font-weight: 500;
+}
+
+.ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar,
+.ck.ck-editor__top .ck-sticky-panel .ck-toolbar.ck-rounded-corners {
+  border-radius: 10px 10px 0 0 !important;
+  margin-top: 10px;
+  background-color: #ffffff;
+}
+
+.ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable,
+.ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
+  border-radius: 0 0 10px 10px !important;
+  height: 450px !important;
+  margin-bottom: 40px;
+}
+
+.form__overview-label {
+  font-weight: 500;
+}
+
+#id_overview {
+  display: block;
+  margin-top: 10px;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid #c2c2c2;
+  width: 100%;
+  resize: none;
+}
+
+.submit-btn {
+  margin: 40px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #fe8282;
+  border: none;
+  border-radius: 10px;
+  padding: 8.2px 30px;
+  width: 120px;
+  box-shadow: 2px 5px 26px rgba(37, 37, 37, 0.24);
+  cursor: pointer;
+}
+
+@media (max-width: 34.375rem) {
+  body {
+    font-size: 14px;
+    line-height: 130%;
+  }
+
+  .form {
+    margin-top: 1.2em;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .form__thumbnail {
+    font-size: 12px;
+  }
+
+  .form__thumbnail-label {
+    font-size: 14px;
+  }
+
+  .ck.ck-icon,
+  .ck.ck-icon {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .ck.ck-editor {
+    margin-top: 10px !important;
+  }
+
+  .ck.ck-dropdown .ck-dropdown__panel.ck-dropdown__panel_nw,
+  .ck.ck-dropdown .ck-dropdown__panel.ck-dropdown__panel_sw {
+    width: 346px;
+  }
+
+  .ck.ck-editor__top .ck-sticky-panel .ck-toolbar {
+    margin: 0 !important;
+  }
+
+  .submit-btn {
+    margin: 25px 0 80px 0;
+  }
+}

@@ -1,0 +1,172 @@
+
+
+.profile-info {
+    display: flex;
+    margin: 1rem;
+}
+
+.profile-profilePic {
+    width: 94px;
+    height: 94px;
+    border-radius: 50%; 
+    object-fit: cover;
+}
+
+.name {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+.profile-stats {
+    margin: 27px 0 0 27px;
+
+}
+
+.stats {
+    list-style: none;
+    display: flex;
+    font-size: 13px;
+    margin: 20px 0 0 0;  
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mar {
+    margin-right: 32px;
+}
+
+.profile-stat-count {
+    font-weight: 700;
+    
+    margin-right: 0px;
+    
+    
+}
+
+.username {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+.button {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    display: block;
+    width: 180px;
+    border-radius: 6px;
+    padding: 9px 0;
+    text-decoration: none;
+    font-size: 10px;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    font-weight: 500;
+    box-shadow: .125rem .188rem .6rem 0 rgba(0, 0, 0, .18); 
+}
+
+.add-post {
+    margin-top: 30px;
+    display: flex;
+    justify-content: right;
+}
+
+.recent h3 {
+    margin-top: 2rem;
+}
+
+.edit-profile {
+    display: none;
+}
+
+.hide-mobile-profile {
+    display: none;
+}
+
+.menu-icon {
+    
+    display: flex;
+    width: 25px;
+    margin-right: 1rem;
+}
+
+
+@media (min-width:34.375rem) {
+
+    .hide-mobile-profile{
+        display: flex;
+    }
+    header {
+        display: flex ;
+    }
+    
+    .profile-info {
+        margin: 1rem 1rem 1rem 5rem;
+        display: flex;  
+    }
+
+    .profile-profilePic {
+        width: 127px;
+        height: 127px;  
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+    .username {
+        font-size: 19px;
+    }
+
+    .stats {
+        font-size: 17px;
+        margin: 20px 0 0 0;  
+    }
+
+    .profile-stats {
+        margin: 27px 0 0 54px;
+    
+    }
+
+    .mar {
+        margin-right: 60px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .profile-buttons{
+        display: flex;
+        text-transform: uppercase;
+    }
+
+    .button {
+        
+        width: 206px;
+        
+        padding: 9px 0;
+       
+        font-size: 10px;
+        margin: 1.5rem 0 0 190px;
+        
+        
+        
+    }
+
+    .edit-profile {
+        background-color: #fff;
+        color: #000;
+        display: block;
+        margin-left: 25px;
+    }
+
+    
+}

@@ -65,25 +65,25 @@ To get a local copy up and running follow these simple steps:
 You may use this project to publish blogs.
 
 - Home
-  ![Create Poll](../assets/home.png)
+  ![Home](../assets/home.png)
 
 - Profile
-  ![Select Choice](../assets/profile.png)
+  ![Profile](../assets/profile.png)
 
-- Post Details
-  ![Results](../assets/post_details.png)
+- Post Detail
+  ![Post Detail](../assets/post_detail.png)
 
 - Create Post
-  ![Results](../assets/create_post.png)
+  ![Create Post](../assets/create_post.png)
 
 - Update Post
-  ![Results](../assets/update_post.png)
+  ![Update Post](../assets/update_post.png)
 
 - Register
-  ![Results](../assets/register.png)
+  ![Register](../assets/register.png)
 
 - Login
-  ![Results](../assets/login.png)
+  ![Login](../assets/login.png)
 
 ## Contributing
 
